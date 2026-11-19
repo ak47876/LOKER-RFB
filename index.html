@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Loker Business Consultant | RFB Surakarta</title>
+  <meta name="description" content="Lowongan Business Consultant di RFB Surakarta. Hobi ngobrol? Jadikan kerjaan! Pelatihan dari nol, terbuka untuk Fresh Graduate & Mahasiswa (Part-time/Magang).">
+  
+  <!-- Open Graph / Social Media Preview Tags agar terlihat rapi saat link dibagikan ke publik -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Loker Business Consultant | RFB Surakarta">
+  <meta property="og:description" content="Hobi ngobrol? Jadikan kerjaan! Gabung sebagai Business Consultant di Solo Raya. Dilatih dari nol, cocok untuk Fresh Graduate & Mahasiswa.">
+  <meta name="theme-color" content="#1A1640">
+
+  <!-- Google Fonts: Bricolage Grotesque & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'sans-serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg: '#F5F2FF',
+              ink: '#1A1640',
+              mut: '#5B5784',
+              card: '#FFFFFF',
+              line: '#D9D3F5',
+              gold: '#F2B705',
+              goldHover: '#FFD03B',
+              mint: '#D3F6E4',
+              mintInk: '#0F3D2A',
+              darkBg: '#120F2E',
+              darkCard: '#1D1946',
+              darkLine: '#342E6E',
+              darkInk: '#F2EFFF',
+              darkMut: '#B3AEDB',
+            }
+          },
+          boxShadow: {
+            'tactile': '0 5px 0 #1A1640',
+            'tactile-dark': '0 5px 0 #09071A',
+            'phone': '0 24px 50px -12px rgba(26, 22, 64, 0.22)',
+          },
+          animation: {
+            'bob': 'bob 4s ease-in-out infinite',
+            'pop-1': 'pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards',
+            'pop-2': 'pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards',
+            'pop-3': 'pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards',
+            'pop-4': 'pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 2.3s forwards',
+          },
+          keyframes: {
+            bob: {
+              '0%, 100%': { transform: 'rotate(12deg) translateY(0px)' },
+              '50%': { transform: 'rotate(15deg) translateY(-10px)' },
+            },
+            pop: {
+              '0%': { opacity: '0', transform: 'translateY(12px) scale(0.96)' },
+              '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Ambient Radial Gradients */
+    .ambient-bg {
+      background-image: 
+        radial-gradient(600px 420px at 88% 2%, rgba(242, 183, 5, 0.25), transparent 70%),
+        radial-gradient(520px 420px at 0% 28%, rgba(124, 92, 255, 0.18), transparent 70%);
+    }
+    .dark .ambient-bg {
+      background-image: 
+        radial-gradient(600px 420px at 88% 2%, rgba(242, 183, 5, 0.14), transparent 70%),
+        radial-gradient(520px 420px at 0% 28%, rgba(124, 92, 255, 0.22), transparent 70%);
+    }
+    
+    /* Custom Accordion Marker */
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-ink dark:bg-brand-darkBg dark:text-brand-darkInk font-sans antialiased selection:bg-brand-gold selection:text-brand-ink ambient-bg min-h-screen transition-colors duration-300">
+
+  <!-- Toast Notification (Pengganti alert) -->
+  <div id="toast" role="status" aria-live="polite" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 -translate-y-4">
+    <div class="bg-brand-ink text-white dark:bg-brand-gold dark:text-brand-ink px-5 py-3 rounded-full shadow-xl font-medium text-sm flex items-center gap-2 border border-white/10">
+      <svg class="w-4 h-4 text-brand-gold dark:text-brand-ink shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      <span id="toast-msg">Tautan berhasil disalin!</span>
+    </div>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-brand-bg/80 dark:bg-brand-darkBg/80 border-b border-brand-line/60 dark:border-brand-darkLine/60">
+    <div class="max-w-3xl mx-auto px-5 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-brand-ink dark:bg-brand-gold text-brand-gold dark:text-brand-ink font-display font-extrabold text-lg flex items-center justify-center shadow-sm">
+          R
+        </div>
+        <div>
+          <span class="font-display font-bold text-base tracking-tight block leading-none">RFB Surakarta</span>
+          <span class="text-[11px] text-brand-mut dark:text-brand-darkMut font-medium">Karir & Rekrutmen</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <!-- Share Button -->
+        <button onclick="shareJob()" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine hover:border-brand-ink dark:hover:border-brand-gold transition-colors cursor-pointer" title="Bagikan info loker ini">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+          <span>Bagikan</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button onclick="toggleTheme()" type="button" aria-label="Ganti Tema Terang/Gelap" class="p-2 rounded-full bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine hover:border-brand-ink dark:hover:border-brand-gold transition-colors cursor-pointer">
+          <!-- Sun Icon -->
+          <svg id="icon-sun" class="w-4 h-4 hidden dark:block text-brand-gold" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <!-- Moon Icon -->
+          <svg id="icon-moon" class="w-4 h-4 block dark:hidden text-brand-ink" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-5 pt-8 pb-28 space-y-16">
+
+    <!-- HERO SECTION -->
+    <section aria-labelledby="judul" class="space-y-7">
+      <div class="space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-mint text-brand-mintInk dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-500/20 text-xs font-bold tracking-wide">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+          <span>LOWONGAN TERBUKA • SOLO RAYA</span>
+        </div>
+        <h1 id="judul" class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.06] text-balance">
+          Hobi ngobrol? <span class="underline decoration-brand-gold decoration-4 underline-offset-4">Jadikan kerjaan.</span>
+        </h1>
+        <p class="text-brand-mut dark:text-brand-darkMut text-base sm:text-lg max-w-xl">
+          Posisi <strong class="text-brand-ink dark:text-white">Business Consultant</strong> di RFB Surakarta. Cocok buat kamu yang komunikatif, suka ketemu orang baru, dan mau belajar dunia pasar komoditas dari nol.
+        </p>
+      </div>
+
+      <!-- Interactive Phone Chat Mockup -->
+      <div class="relative bg-white dark:bg-brand-darkCard border-2 border-brand-line dark:border-brand-darkLine rounded-[30px] shadow-phone mt-8">
+        <!-- Floating Gold Coin Badge -->
+        <div aria-hidden="true" class="absolute -top-7 right-4 sm:right-6 w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full bg-gradient-to-br from-[#FFE58F] via-brand-gold to-[#B88300] border-[3px] border-white/60 shadow-lg flex flex-col items-center justify-center font-display font-extrabold text-[#4A3500] animate-bob z-10 select-none">
+          <span class="text-xl leading-none">Au</span>
+          <span class="text-[9px] tracking-widest uppercase opacity-80">79</span>
+        </div>
+
+        <!-- Phone Header -->
+        <div class="flex items-center gap-3.5 px-5 py-4 bg-brand-ink dark:bg-[#0D0B24] text-white rounded-t-[28px]">
+          <div class="relative">
+            <div class="w-11 h-11 rounded-full bg-brand-gold text-brand-ink font-display font-extrabold text-lg flex items-center justify-center border-2 border-white/20">
+              R
+            </div>
+            <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-brand-ink"></span>
+          </div>
+          <div>
+            <div class="font-display font-bold text-base leading-tight">Tim Rekrutmen RFB</div>
+            <div class="text-xs text-emerald-300 font-medium">online sekarang • fast response</div>
+          </div>
+        </div>
+
+        <!-- Chat Bubbles -->
+        <div class="p-5 sm:p-6 bg-brand-bg/70 dark:bg-brand-darkBg/60 space-y-3.5 rounded-b-[28px]" aria-label="Contoh percakapan rekrutmen">
+          <div class="opacity-0 animate-pop-1 max-w-[85%] bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine px-4 py-3 rounded-2xl rounded-bl-sm shadow-sm text-sm sm:text-base">
+            Kak, ada loker yang kerjanya banyak ngobrol nggak? 👀
+          </div>
+          <div class="opacity-0 animate-pop-2 ml-auto max-w-[85%] bg-brand-ink dark:bg-brand-gold text-white dark:text-brand-ink px-4 py-3 rounded-2xl rounded-br-sm shadow-sm text-sm sm:text-base font-medium">
+            Ada dong! Namanya <strong>Business Consultant</strong> 😎
+          </div>
+          <div class="opacity-0 animate-pop-3 ml-auto max-w-[88%] bg-brand-ink dark:bg-brand-gold text-white dark:text-brand-ink px-4 py-3 rounded-2xl rounded-br-sm shadow-sm text-sm sm:text-base">
+            Kamu ngobrol sama calon klien, belajar analisis pasar emas, dan tumbuh bareng tim di Solo Raya 🚀
+          </div>
+          <div class="opacity-0 animate-pop-4 pt-2">
+            <!-- Quick Interactive Reply Bar inside Phone -->
+            <form onsubmit="sendCustomWA(event)" class="flex flex-col sm:flex-row gap-2 bg-white dark:bg-brand-darkCard p-2 rounded-2xl border border-brand-line dark:border-brand-darkLine shadow-sm">
+              <input id="candidate-name" type="text" placeholder="Ketik namamu di sini untuk langsung chat..." class="flex-1 bg-transparent px-3 py-2 text-sm focus:outline-none text-brand-ink dark:text-white placeholder:text-brand-mut/70" aria-label="Nama Lengkap Anda">
+              <button type="submit" class="inline-flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-goldHover text-brand-ink font-bold text-sm px-5 py-2.5 rounded-xl border-2 border-brand-ink transition-transform active:scale-95 cursor-pointer shrink-0">
+                <span>Kirim ke WA</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Highlights Pills -->
+      <div class="flex flex-wrap gap-2.5 pt-1">
+        <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-brand-mint text-brand-mintInk dark:bg-emerald-950/70 dark:text-emerald-200 text-sm font-semibold">📍 Area Solo Raya</span>
+        <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-brand-mint text-brand-mintInk dark:bg-emerald-950/70 dark:text-emerald-200 text-sm font-semibold">🎓 Fresh graduate boleh</span>
+        <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-brand-mint text-brand-mintInk dark:bg-emerald-950/70 dark:text-emerald-200 text-sm font-semibold">🎒 Mahasiswa: part-time / magang</span>
+        <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-brand-mint text-brand-mintInk dark:bg-emerald-950/70 dark:text-emerald-200 text-sm font-semibold">📚 Dilatih dari nol</span>
+      </div>
+    </section>
+
+    <!-- DAILY ROUTINE TIMELINE -->
+    <section aria-labelledby="kerja" class="space-y-5">
+      <div>
+        <h2 id="kerja" class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight">Seharian jadi Business Consultant</h2>
+        <p class="text-brand-mut dark:text-brand-darkMut mt-1">Kerjaannya 90% komunikasi. Kamu nggak jalan sendirian—ada kurikulum pelatihan dan mentor tim yang bantu.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine p-5 rounded-2xl space-y-2 hover:border-brand-gold transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center text-xl">☕</div>
+          <h3 class="font-display font-bold text-lg">Pagi</h3>
+          <p class="text-sm text-brand-mut dark:text-brand-darkMut leading-relaxed">Morning briefing, update kabar pasar emas terkini, dan siapkan bahan obrolan menarik.</p>
+        </div>
+
+        <div class="bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine p-5 rounded-2xl space-y-2 hover:border-brand-gold transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center text-xl">📞</div>
+          <h3 class="font-display font-bold text-lg">Siang</h3>
+          <p class="text-sm text-brand-mut dark:text-brand-darkMut leading-relaxed">Menghubungi dan berdiskusi dengan calon klien di Solo Raya, kenalan, dan edukasi produk.</p>
+        </div>
+
+        <div class="bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine p-5 rounded-2xl space-y-2 hover:border-brand-gold transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-xl">📈</div>
+          <h3 class="font-display font-bold text-lg">Sore</h3>
+          <p class="text-sm text-brand-mut dark:text-brand-darkMut leading-relaxed">Atur jadwal janji temu, evaluasi progres bareng mentor tim, dan susun rencana esok hari.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUALIFICATIONS -->
+    <section aria-labelledby="cari" class="space-y-5">
+      <div>
+        <h2 id="cari" class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight">Yang kami cari</h2>
+        <p class="text-brand-mut dark:text-brand-darkMut mt-1">Nggak wajib punya pengalaman finansial dari awal. Yang paling penting punya kemauan belajar.</p>
+      </div>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <li class="flex items-center gap-3 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine px-4 py-3.5 rounded-2xl font-medium">
+          <span class="text-xl">💬</span><span>Enak diajak ngobrol & komunikatif</span>
+        </li>
+        <li class="flex items-center gap-3 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine px-4 py-3.5 rounded-2xl font-medium">
+          <span class="text-xl">🔥</span><span>Antusias belajar hal-hal baru</span>
+        </li>
+        <li class="flex items-center gap-3 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine px-4 py-3.5 rounded-2xl font-medium">
+          <span class="text-xl">💪</span><span>Punya mental tangguh & pantang menyerah</span>
+        </li>
+        <li class="flex items-center gap-3 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine px-4 py-3.5 rounded-2xl font-medium">
+          <span class="text-xl">✨</span><span>Berpenampilan sopan dan rapi</span>
+        </li>
+        <li class="flex items-center gap-3 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine px-4 py-3.5 rounded-2xl font-medium">
+          <span class="text-xl">📍</span><span>Domisili Solo Raya & sekitarnya</span>
+        </li>
+        <li class="flex items-center gap-3 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine px-4 py-3.5 rounded-2xl font-medium">
+          <span class="text-xl">🎓</span><span>Min. SMA/SMK, Fresh Graduate / Mahasiswa</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- STUDENT CALLOUT BANNER -->
+    <section aria-labelledby="mhs">
+      <div class="bg-brand-gold text-brand-ink rounded-3xl p-6 sm:p-7 border-2 border-brand-ink shadow-tactile flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <div class="space-y-1.5">
+          <div class="inline-block px-3 py-0.5 rounded-full bg-brand-ink text-brand-gold text-xs font-bold uppercase tracking-wider">Khusus Mahasiswa</div>
+          <h2 id="mhs" class="font-display font-extrabold text-2xl sm:text-3xl">Masih kuliah? Tetap bisa gabung 🎒</h2>
+          <p class="text-brand-ink/90 text-sm sm:text-base max-w-lg">
+            Mahasiswa dan mahasiswi aktif bisa ikut lewat jalur <strong>Part-Time</strong> atau <strong>Magang</strong>. Jadwal bisa didiskusikan menyesuaikan jam kuliahmu.
+          </p>
+        </div>
+        <a href="https://wa.me/6285117775802?text=Halo%20Tim%20Rekrutmen%20RFB%20Surakarta%2C%20saya%20mahasiswa%20dan%20tertarik%20jalur%20part-time%2Fmagang%20Business%20Consultant." target="_blank" rel="noopener" class="shrink-0 bg-brand-ink text-white hover:bg-brand-ink/90 font-bold text-sm px-5 py-3.5 rounded-full transition-transform active:scale-95">
+          Tanya Jadwal Kuliah →
+        </a>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section aria-labelledby="dapat" class="space-y-5">
+      <h2 id="dapat" class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight">Benefit yang kamu dapatkan</h2>
+      <div class="bg-white dark:bg-brand-darkCard border-2 border-brand-line dark:border-brand-darkLine rounded-3xl p-6 sm:p-7 space-y-4">
+        <div class="flex items-start gap-3.5">
+          <div class="w-7 h-7 rounded-full bg-brand-gold/30 text-brand-ink dark:text-brand-gold flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+          <div>
+            <strong class="block font-display text-lg">Pelatihan Terstruktur dari Nol</strong>
+            <span class="text-sm text-brand-mut dark:text-brand-darkMut">Kurikulum lengkap Business Consultant, mulai dari dasar komunikasi hingga pengetahuan pasar komoditas.</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3.5">
+          <div class="w-7 h-7 rounded-full bg-brand-gold/30 text-brand-ink dark:text-brand-gold flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+          <div>
+            <strong class="block font-display text-lg">Mentoring Langsung di Lapangan</strong>
+            <span class="text-sm text-brand-mut dark:text-brand-darkMut">Didampingi oleh senior dan leader berpengalaman saat berhadapan dengan calon klien.</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3.5">
+          <div class="w-7 h-7 rounded-full bg-brand-gold/30 text-brand-ink dark:text-brand-gold flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+          <div>
+            <strong class="block font-display text-lg">Skill Komunikasi & Negosiasi Mahal</strong>
+            <span class="text-sm text-brand-mut dark:text-brand-darkMut">Keahlian public speaking, negosiasi, dan relasi bisnis yang kepakai seumur hidup di bidang apa pun.</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3.5">
+          <div class="w-7 h-7 rounded-full bg-brand-gold/30 text-brand-ink dark:text-brand-gold flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+          <div>
+            <strong class="block font-display text-lg">Insentif Progresif & Jenjang Karier</strong>
+            <span class="text-sm text-brand-mut dark:text-brand-darkMut">Apresiasi penghasilan sesuai performa kerja serta peluang promosi posisi secara transparan.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION STEPS -->
+    <section aria-labelledby="alur" class="space-y-5">
+      <div>
+        <h2 id="alur" class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight">Alur pendaftaran</h2>
+        <p class="text-brand-mut dark:text-brand-darkMut mt-1">Nggak ribet. Empat langkah cepat, dimulai dari satu pesan WhatsApp.</p>
+      </div>
+
+      <ol class="grid sm:grid-cols-2 gap-3.5">
+        <li class="flex items-center gap-4 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine p-4 rounded-2xl">
+          <span class="w-10 h-10 rounded-full bg-brand-gold text-brand-ink font-display font-extrabold text-lg flex items-center justify-center shrink-0 border-2 border-brand-ink">1</span>
+          <div>
+            <strong class="block font-bold">Chat via WhatsApp 💬</strong>
+            <span class="text-xs text-brand-mut dark:text-brand-darkMut">Kirim perkenalan singkat ke tim kami</span>
+          </div>
+        </li>
+        <li class="flex items-center gap-4 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine p-4 rounded-2xl">
+          <span class="w-10 h-10 rounded-full bg-brand-gold text-brand-ink font-display font-extrabold text-lg flex items-center justify-center shrink-0 border-2 border-brand-ink">2</span>
+          <div>
+            <strong class="block font-bold">Seleksi Singkat ✅</strong>
+            <span class="text-xs text-brand-mut dark:text-brand-darkMut">Penjadwalan sesi ngobrol dengan HR</span>
+          </div>
+        </li>
+        <li class="flex items-center gap-4 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine p-4 rounded-2xl">
+          <span class="w-10 h-10 rounded-full bg-brand-gold text-brand-ink font-display font-extrabold text-lg flex items-center justify-center shrink-0 border-2 border-brand-ink">3</span>
+          <div>
+            <strong class="block font-bold">Interview di Kantor 🤝</strong>
+            <span class="text-xs text-brand-mut dark:text-brand-darkMut">Ketemu langsung di kantor Surakarta</span>
+          </div>
+        </li>
+        <li class="flex items-center gap-4 bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine p-4 rounded-2xl">
+          <span class="w-10 h-10 rounded-full bg-brand-gold text-brand-ink font-display font-extrabold text-lg flex items-center justify-center shrink-0 border-2 border-brand-ink">4</span>
+          <div>
+            <strong class="block font-bold">Training & Mulai 🚀</strong>
+            <span class="text-xs text-brand-mut dark:text-brand-darkMut">Bekal ilmu siap terjun bareng tim</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section aria-labelledby="faq" class="space-y-4">
+      <h2 id="faq" class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight">Pertanyaan yang sering ditanyakan</h2>
+      
+      <div class="space-y-2.5">
+        <details class="group bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine rounded-2xl px-5 py-4 open:border-brand-gold transition-colors">
+          <summary class="cursor-pointer font-bold flex items-center justify-between gap-4 select-none">
+            <span>Apakah harus punya background jurusan keuangan/ekonomi?</span>
+            <span class="text-brand-gold font-display text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-sm text-brand-mut dark:text-brand-darkMut leading-relaxed">
+            Nggak harus. Latar belakang jurusan apa pun dipersilakan melamar karena semua materi produk dan komunikasi diajarkan dari dasar saat masa training.
+          </p>
+        </details>
+
+        <details class="group bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine rounded-2xl px-5 py-4 open:border-brand-gold transition-colors">
+          <summary class="cursor-pointer font-bold flex items-center justify-between gap-4 select-none">
+            <span>Di mana lokasi kantor dan area kerjanya?</span>
+            <span class="text-brand-gold font-display text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-sm text-brand-mut dark:text-brand-darkMut leading-relaxed">
+            Berbasis di kantor cabang kami di Jl. Adisucipto No. 86, Surakarta dengan area prospek mencakup wilayah Solo Raya.
+          </p>
+        </details>
+
+        <details class="group bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine rounded-2xl px-5 py-4 open:border-brand-gold transition-colors">
+          <summary class="cursor-pointer font-bold flex items-center justify-between gap-4 select-none">
+            <span>Apa itu kantor jasa perdagangan berjangka?</span>
+            <span class="text-brand-gold font-display text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-sm text-brand-mut dark:text-brand-darkMut leading-relaxed">
+            Kantor jasa perdagangan berjangka yang membantu memfasilitasi nasabah dalam bertransaksi kontrak berjangka komoditas (seperti emas/LOCO London) melalui bursa berjangka resmi di bawah pengawasan Bappebti.
+          </p>
+        </details>
+
+        <details class="group bg-white dark:bg-brand-darkCard border border-brand-line dark:border-brand-darkLine rounded-2xl px-5 py-4 open:border-brand-gold transition-colors">
+          <summary class="cursor-pointer font-bold flex items-center justify-between gap-4 select-none">
+            <span>Bagaimana jam operasional kerjanya?</span>
+            <span class="text-brand-gold font-display text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-sm text-brand-mut dark:text-brand-darkMut leading-relaxed">
+            Senin–Jumat pukul 08.00–17.00 WIB dan Sabtu pukul 09.00–15.00 WIB. Untuk mahasiswa jalur part-time/magang, jadwal menyesuaikan kesepakatan saat interview.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- TRANSPARENCY & LEGAL DISCLAIMER -->
+    <section aria-labelledby="legal">
+      <div class="border-2 border-dashed border-brand-line dark:border-brand-darkLine rounded-2xl p-5 bg-white/50 dark:bg-brand-darkCard/40 space-y-1.5">
+        <div class="flex items-center gap-2 font-display font-bold text-sm text-brand-ink dark:text-white">
+          <svg class="w-4 h-4 text-brand-gold shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+          <span id="legal">Transparan dari awal</span>
+        </div>
+        <p class="text-xs sm:text-sm text-brand-mut dark:text-brand-darkMut leading-relaxed">
+          <strong class="text-brand-ink dark:text-white">RFB adalah kantor jasa perdagangan berjangka resmi yang diawasi Bappebti.</strong> Perdagangan berjangka memiliki peluang sekaligus risiko tinggi dan tidak ada jaminan keuntungan pasti. Sebagai Business Consultant, kamu akan dilatih mengedukasi produk serta risikonya secara jujur dan profesional kepada calon klien.
+        </p>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section aria-labelledby="gabung" class="text-center bg-brand-ink dark:bg-brand-darkCard text-white rounded-[32px] p-8 sm:p-12 border-2 border-brand-line/20 relative overflow-hidden">
+      <div class="relative z-10 space-y-4 max-w-md mx-auto">
+        <h2 id="gabung" class="font-display font-extrabold text-3xl sm:text-4xl">Siap mulai ngobrol?</h2>
+        <p class="text-white/80 text-sm sm:text-base">
+          Kirim satu pesan WhatsApp sekarang, tim rekrutmen kami siap memandu langkah pertamamu.
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="https://wa.me/6285117775802?text=Halo%2C%20saya%20tertarik%20loker%20Business%20Consultant%20RFB%20Surakarta" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brand-gold hover:bg-brand-goldHover text-brand-ink font-bold px-7 py-4 rounded-full border-2 border-brand-ink shadow-tactile transition-transform active:translate-y-1">
+            <span>Chat 0851-1777-5802</span>
+          </a>
+          <button onclick="copyPhone()" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-4 rounded-full text-sm transition-colors cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            <span>Salin Nomor</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-brand-line dark:border-brand-darkLine py-10 pb-28 text-center text-sm text-brand-mut dark:text-brand-darkMut">
+    <div class="max-w-3xl mx-auto px-5 space-y-2">
+      <div class="font-display font-bold text-brand-ink dark:text-white text-base">RFB Surakarta</div>
+      <p>Senin–Jumat 08.00–17.00 WIB • Sabtu 09.00–15.00 WIB</p>
+      <p>Jl. Adisucipto No. 86, Surakarta, Jawa Tengah</p>
+      <div class="pt-2">
+        <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Adisucipto+No.+86+Surakarta" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 font-bold text-brand-ink dark:text-brand-gold hover:underline">
+          <span>📍 Buka Lokasi di Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP ACTION BUTTON -->
+  <a href="https://wa.me/6285117775802?text=Halo%2C%20saya%20tertarik%20loker%20Business%20Consultant%20RFB%20Surakarta" target="_blank" rel="noopener" aria-label="Chat WhatsApp Rekrutmen" class="fixed right-5 bottom-5 z-30 inline-flex items-center gap-2.5 bg-brand-gold hover:bg-brand-goldHover text-brand-ink font-bold px-5 py-3.5 rounded-full border-2 border-brand-ink shadow-tactile transition-transform hover:scale-105 active:translate-y-1">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+    <span>Daftar via WA</span>
+  </a>
+
+  <script>
+    // Inisialisasi Tema Otomatis sesuai Sistem Pengguna
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+    }
+
+    // Fungsi Toast Notifikasi (Menggantikan alert)
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      toastMsg.textContent = message;
+      toast.classList.remove('opacity-0', '-translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-4');
+      }, 3000);
+    }
+
+    // Kirim Pesan WA Terpersonalisasi dari Mockup HP
+    function sendCustomWA(e) {
+      e.preventDefault();
+      const nameInput = document.getElementById('candidate-name').value.trim();
+      const baseText = nameInput 
+        ? `Halo Tim Rekrutmen RFB Surakarta, perkenalkan nama saya ${nameInput}. Saya tertarik melamar posisi Business Consultant.`
+        : `Halo Tim Rekrutmen RFB Surakarta, saya tertarik melamar posisi Business Consultant.`;
+      const waUrl = `https://wa.me/6285117775802?text=${encodeURIComponent(baseText)}`;
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    // Salin Nomor Telepon
+    function copyPhone() {
+      copyTextToClipboard('085117775802', 'Nomor WA 0851-1777-5802 disalin!');
+    }
+
+    // Bagikan Halaman Loker (Web Share API + Fallback Copy Link)
+    function shareJob() {
+      const shareData = {
+        title: 'Loker Business Consultant | RFB Surakarta',
+        text: 'Hobi ngobrol? Jadikan kerjaan! Cek info loker Business Consultant di RFB Surakarta (Solo Raya):',
+        url: window.location.href
+      };
+
+      if (navigator.share && window.location.protocol.startsWith('http')) {
+        navigator.share(shareData).catch(() => {});
+      } else {
+        copyTextToClipboard(window.location.href, 'Tautan halaman berhasil disalin!');
+      }
+    }
+
+    // Helper Clipboard Kompatibel iFrame
+    function copyTextToClipboard(text, successMsg) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (err) {
+        showToast('Gagal menyalin otomatis.');
+      }
+      document.body.removeChild(textArea);
+    }
+  </script>
+</body>
+</html>
